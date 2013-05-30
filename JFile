@@ -89,3 +89,28 @@ end
 filter :min do |src, config|
   src.gsub /<DEPENDENCY_SUFFIX>/, '.min'
 end
+
+# ------
+# Filters to scope for AMD (RequireJS/curl.js/etc) loaders
+# ------
+
+# Add define() opening tag and declare Pusher in this context
+filter do |src, config|
+  src.sub /(;?\(function\(\))/, 'define(function(){var Pusher;\1'
+end
+
+# Switch function declaration style to use previously declared var
+filter do |src, config|
+  src.sub 'function Pusher', 'Pusher = function'
+end
+
+# Return the Pusher object and close the define()
+# A simple concat causes this line to be duplicated after the license
+filter do |src, config|
+  src.reverse.sub(';',';return Pusher;});'.reverse).reverse
+end
+
+# Replace any Pushers referencing the window/this scope
+filter do |src, config|
+  src.sub 'this.Pusher', 'Pusher'
+end
