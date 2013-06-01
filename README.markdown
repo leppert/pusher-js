@@ -1,7 +1,7 @@
 # Pusher AMD
 
-This is an AMD enabled fork of the [Pusher](http://pusherapp.com)
-Javascript library.
+This is an [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) enabled
+fork of the [Pusher](http://pusherapp.com) Javascript library.
 
 Note: the Pusher global variable has been removed, which is required by
 the Pusher stats JSONP call. If you'd like to enable stats collection,
