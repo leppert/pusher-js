@@ -1,3 +1,13 @@
+# Pusher AMD
+
+This is an AMD enabled fork of the [Pusher](http://pusherapp.com)
+Javascript library.
+
+Note: the Pusher global variable has been removed, which is required by
+the Pusher stats JSONP call. If you'd like to enable stats collection,
+you should assign Pusher to the global scope. Otherwise, you should
+disable stats by passing `disableStats: true` to the Pusher constructor.
+
 # Pusher Javascript Client
 
 This library is an open source client that allows Javascript clients to connect to the [Pusher webservice](http://pusherapp.com/). It is highly recommended that you use the hosted version of this file to stay up to date with the latest updates.
