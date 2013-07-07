@@ -2,6 +2,7 @@ module.exports = [
   'src/pusher.js',
   'src/util.js',
   'src/defaults.js',
+  'src/config.js',
   'src/errors.js',
   'src/dependency_loader.js',
   'src/dependencies.js',
@@ -9,8 +10,6 @@ module.exports = [
   'src/net_info.js',
 
   'src/utils/timer.js',
-
-  'src/pusher_channels.js',
 
   'src/base64.js',
   'src/jsonp/jsonp_request.js',
@@ -42,6 +41,11 @@ module.exports = [
   'src/connection/handshake.js',
   'src/connection/connection_manager.js',
 
-  'src/pusher_channels.js',
-  'src/pusher_authorizer.js',
+  'src/channels/members.js',
+  'src/channels/channel.js',
+  'src/channels/private_channel.js',
+  'src/channels/presence_channel.js',
+  'src/channels/channels.js',
+
+  'src/pusher_authorizer.js'
 ];
